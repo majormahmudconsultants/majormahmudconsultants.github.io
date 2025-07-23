@@ -91,7 +91,6 @@ footer .social-icons a:hover {
   color: #047857; /* green text */
 }
 
-/* Optional, only needed if you want further fine-tuning */
 .scroll-snap-x {
   scroll-snap-type: x mandatory;
 }
@@ -106,4 +105,9 @@ footer .social-icons a:hover {
 /* Apply Noto Sans Bengali to Bangla content ONLY */
 [lang="bn"], .bangla-text {
   font-family: "Noto Sans Bengali", sans-serif !important;
+}
+
+/* Handle overflow issue on mobile screens */
+html, body {
+  overflow-x: hidden;
 }
