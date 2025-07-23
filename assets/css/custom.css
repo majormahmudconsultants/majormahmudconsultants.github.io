@@ -1,0 +1,109 @@
+/* custom.css file - main and only css file for index.html*/
+@import "tailwindcss";
+
+:root {
+  --brand-green: #215320;
+  --brand-green-dark: #234118;
+  --text-default: #1a1a1a;
+  --section-bg: #f9f9f9;
+}
+
+/* Typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-default);
+  background-color: white;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Default heading for English */
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--brand-green);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Heading override for Bangla text */
+h1[lang="bn"], h2[lang="bn"], h3[lang="bn"],
+.bangla-text h1, .bangla-text h2, .bangla-text h3 {
+  font-family: "Noto Sans Bengali", sans-serif;
+}
+
+/* Buttons */
+.button-primary {
+  background-color: var(--brand-green);
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.button-primary:hover {
+  background-color: var(--brand-green-dark);
+}
+
+/* Section spacing */
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Card style */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: white;
+  transition: box-shadow 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+/* Testimonial blockquote */
+.testimonial {
+  font-style: italic;
+  border-left: 4px solid var(--brand-green);
+  padding-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer styling */
+footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+footer .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  background-color: #d1fae5; /* light green bg on hover */
+  color: #047857; /* green text */
+}
+
+/* Optional, only needed if you want further fine-tuning */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+  /* Apply Noto for Bengali script only (based on Unicode range) */
+  @font-face {
+    font-family: "Noto Sans Bengali";
+    src: url("https://fonts.gstatic.com/s/notosansbengali/v22/9Btx3C3u1y7ny2v8WULALP1Et3b38aA9_w.woff2") format("woff2");
+    font-display: swap;
+  }
+
+/* Apply Noto Sans Bengali to Bangla content ONLY */
+[lang="bn"], .bangla-text {
+  font-family: "Noto Sans Bengali", sans-serif !important;
+}
