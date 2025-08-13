@@ -91,9 +91,7 @@ footer .social-icons a:hover {
   color: #047857; /* green text */
 }
 
-.scroll-snap-x {
-  scroll-snap-type: x mandatory;
-}
+
 
   /* Apply Noto for Bengali script only (based on Unicode range) */
   @font-face {
@@ -106,8 +104,31 @@ footer .social-icons a:hover {
 [lang="bn"], .bangla-text {
   font-family: "Noto Sans Bengali", sans-serif !important;
 }
-
-/* Handle overflow issue on mobile screens */
 html, body {
   overflow-x: hidden;
+}
+
+#scrollToTop {
+  bottom: 3rem; /* bottom-12 default for large screens */
+}
+
+/* Slightly smaller screens (below 900px width) */
+@media (max-width: 900px) {
+  #scrollToTop {
+    bottom: 4.5rem; /* 72px */
+  }
+}
+
+/* Even smaller height (below 746px height) */
+@media (max-height: 746px) {
+  #scrollToTop {
+    bottom: 7rem; /* 96px */
+  }
+}
+
+/* Very small width (below 500px) */
+@media (max-width: 500px) {
+  #scrollToTop {
+    bottom: 7rem; /* 120px */
+  }
 }
