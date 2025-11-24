@@ -1,134 +1,116 @@
-/* custom.css file - main and only css file for index.html*/
-@import "tailwindcss";
-
 :root {
-  --brand-green: #215320;
-  --brand-green-dark: #234118;
-  --text-default: #1a1a1a;
-  --section-bg: #f9f9f9;
+  --brand-accent: #10b981;
+  --brand-glow: rgba(16, 185, 129, 0.4);
+  --bg-page: #000000;
+  --text-main: #F5F5F7;
+    --text-muted: #A1A1AA;
+  --header-height: 90px;
 }
 
-/* Typography */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  background-color: var(--bg-page);
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  color: var(--text-default);
-  background-color: white;
-    -webkit-font-smoothing: antialiased;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-}
-
-/* Default heading for English */
-h1, h2, h3 {
-  font-weight: 600;
-  color: var(--brand-green);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-/* Heading override for Bangla text */
-h1[lang="bn"], h2[lang="bn"], h3[lang="bn"],
-.bangla-text h1, .bangla-text h2, .bangla-text h3 {
-  font-family: "Noto Sans Bengali", sans-serif;
-}
-
-/* Buttons */
-.button-primary {
-  background-color: var(--brand-green);
-  color: white;
-  border-radius: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-.button-primary:hover {
-  background-color: var(--brand-green-dark);
-}
-
-/* Section spacing */
-.section {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-/* Card style */
-.card {
-  border: 1px solid #e0e0e0;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  background-color: white;
-  transition: box-shadow 0.3s ease;
-}
-.card:hover {
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-}
-
-/* Testimonial blockquote */
-.testimonial {
-  font-style: italic;
-  border-left: 4px solid var(--brand-green);
-  padding-left: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* Footer styling */
-footer {
-  background-color: #ffffff;
-  border-top: 1px solid #e5e7eb;
-}
-
-footer .social-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  border-radius: 9999px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-footer .social-icons a:hover {
-  background-color: #d1fae5; /* light green bg on hover */
-  color: #047857; /* green text */
-}
-
-
-
-  /* Apply Noto for Bengali script only (based on Unicode range) */
-  @font-face {
-    font-family: "Noto Sans Bengali";
-    src: url("https://fonts.gstatic.com/s/notosansbengali/v22/9Btx3C3u1y7ny2v8WULALP1Et3b38aA9_w.woff2") format("woff2");
-    font-display: swap;
-  }
-
-/* Apply Noto Sans Bengali to Bangla content ONLY */
-[lang="bn"], .bangla-text {
-  font-family: "Noto Sans Bengali", sans-serif !important;
-}
-html, body {
   overflow-x: hidden;
 }
 
+::selection {
+  background: var(--brand-accent);
+  color: #000000;
+}
+
+[lang="bn"], .bangla-text, .font-bangla {
+  font-family: 'Noto Sans Bengali', sans-serif !important;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #333333;
+  border-radius: 20px;
+  border: 3px solid #000000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555555;
+}
+
+.glass-effect {
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 #scrollToTop {
-  bottom: 3rem; /* bottom-12 default for large screens */
+  z-index: 9999;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
 }
 
-/* Slightly smaller screens (below 900px width) */
-@media (max-width: 900px) {
-  #scrollToTop {
-    bottom: 4.5rem; /* 72px */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--brand-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 2.25rem !important;
+    line-height: 1.1;
   }
 }
 
-/* Even smaller height (below 746px height) */
-@media (max-height: 746px) {
-  #scrollToTop {
-    bottom: 7rem; /* 96px */
-  }
+.text-brand-radar {
+  color: #4ade80;
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
 }
 
-/* Very small width (below 500px) */
-@media (max-width: 500px) {
-  #scrollToTop {
-    bottom: 7rem; /* 120px */
-  }
+p {
+  color: #d1d5db;
+}
+
+h1, h2, h3, h4 {
+  color: #ffffff;
+}
+
+.glass-card {
+  background: #111111;
+  border: 1px solid #262626;
+}
+.glass-card:hover {
+  border-color: #4ade80;
+  transform: translateY(-2px);
 }
