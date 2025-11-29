@@ -44,7 +44,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- ICONS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
 
     <!-- TAILWIND CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -143,7 +144,7 @@
       <nav x-data="{ open: false }" class="nav-island rounded-full px-5 py-3 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-2xl max-w-5xl w-full transition-all duration-300" :class="open ? 'rounded-3xl p-6' : ''">
         <div class="flex items-center justify-between w-full md:w-auto">
           <a href="#hero" class="flex items-center gap-3 group">
-            <img src="assets/img/mmc-symbol.png" alt="MMC Logo" class="w-10 h-10 object-contain brightness-125 hover:scale-105 transition-transform rounded-[1.5rem]" onerror="this.style.display='none'; document.getElementById('textLogo').style.display='flex'">
+            <img src="assets/img/mmc-symbol.png" alt="MMC Logo" loading="lazy" class="w-10 h-10 object-contain brightness-125 hover:scale-105 transition-transform rounded-[1.5rem]" onerror="this.style.display='none'; document.getElementById('textLogo').style.display='flex'">
             <div id="textLogo" class="hidden w-10 h-10 bg-white text-black rounded-full items-center justify-center font-bold text-xs border-2 border-brand-radar">M</div>
             <div class="leading-none">
               <span class="block font-bold text-sm tracking-tight text-white group-hover:text-brand-radar transition-colors">Major Mahmud</span>
@@ -153,10 +154,10 @@
           <button @click="open = !open" class="md:hidden text-white text-xl p-2"><i class="fa-solid fa-bars"></i></button>
         </div>
         <div class="hidden md:flex items-center gap-8 text-[11px] font-bold text-gray-400 uppercase tracking-widest">
-          <a href="#about" class="hover:text-white transition-colors">Profile</a>
-          <a href="#services" class="hover:text-white transition-colors">Expertise</a>
-          <a href="#process" class="hover:text-white transition-colors">Process</a>
-          <a href="#reviews" class="hover:text-white transition-colors">Stories</a>
+          <a href="#about" class="hover:text-white transition-colors">The Profile</a>
+          <a href="#services" class="hover:text-white transition-colors">The Services</a>
+          <a href="#process" class="hover:text-white transition-colors">The Process</a>
+          <a href="#reviews" class="hover:text-white transition-colors">The Reviews</a>
         </div>
         <div class="hidden md:block">
           <a href="#contact" class="bg-brand-accent text-white text-xs font-bold px-6 py-3 rounded-full hover:bg-brand-radar hover:text-black transition-all shadow-radar-glow flex items-center gap-2">
@@ -164,10 +165,10 @@
           </a>
         </div>
         <div x-show="open" class="md:hidden w-full flex flex-col gap-4 pt-4 border-t border-gray-800 mt-2 text-center">
-          <a href="#about" @click="open = false" class="text-gray-300 py-2">Profile</a>
-          <a href="#services" @click="open = false" class="text-gray-300 py-2">Services</a>
-          <a href="#process" @click="open = false" class="text-gray-300 py-2">How It Works</a>
-          <a href="#reviews" @click="open = false" class="text-gray-300 py-2">Reviews</a>
+          <a href="#about" @click="open = false" class="text-gray-300 py-2">The Profile</a>
+          <a href="#services" @click="open = false" class="text-gray-300 py-2">The Services</a>
+          <a href="#process" @click="open = false" class="text-gray-300 py-2">The Process</a>
+          <a href="#reviews" @click="open = false" class="text-gray-300 py-2">The Reviews</a>
           <a href="#contact" @click="open = false" class="bg-brand-accent text-white font-bold py-3 rounded-xl">Book Consultation</a>
         </div>
       </nav>
@@ -203,15 +204,15 @@
       </section>
 
       <!-- ABOUT -->
-      <section id="about" class="py-24 px-6">
+      <section id="about" class="py-15 px-6">
         <div class="max-w-7xl mx-auto">
           <div class="grid lg:grid-cols-2 gap-16 items-center reveal">
             <div class="relative group w-[85%] max-w-[350px] md:max-w-md lg:max-w-none mx-auto">
               <div class="absolute inset-0 bg-brand-primary blur-3xl -z-10 opacity-30 group-hover:opacity-50 transition duration-1000"></div>
               <div class="overflow-hidden rounded-[2.5rem] border border-gray-800 shadow-2xl aspect-4/5 bg-gray-900 relative">
-                 <img src="assets/img/portrait.jpg" alt="Major Mahmud" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700">
+                 <img src="assets/img/portrait.webp" alt="Major Mahmud" loading="lazy" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700">
               </div>
-              <div class="absolute -bottom-16 -right-14 md:-right-6 lg:-right-8 bg-black/90 backdrop-blur border border-gray-800 p-6 rounded-2xl shadow-glow">
+              <div class="absolute -bottom-16 -right-12 md:-right-8 lg:-right-10 bg-black/80 backdrop-blur border border-gray-650 p-4 rounded-2xl shadow-glow">
                 <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-bold">Accreditations</p>
                 <div class="flex gap-5 text-brand-radar text-xl">
                   <i class="fa-solid fa-scale-balanced"></i>
@@ -336,41 +337,18 @@
                 <h4 class="text-lg font-bold text-white mb-2">Digital & Brand</h4>
                 <p class="text-sm text-text-muted">Digital marketing strategy, content planning, and brand operations.</p>
               </div>
-              <div class="p-8 rounded-2xl border border-brand-radar/30 flex flex-col justify-center text-center bg-brand-surface/20">
+
+            </div>
+            <div class="mx-auto max-w-sm p-8 rounded-2xl border border-brand-radar/30 flex flex-col justify-center text-center bg-brand-surface/20 mt-12 ">
                 <h4 class="text-white font-bold mb-2">Custom Requirement?</h4>
                 <a href="#contact" class="text-brand-radar text-sm hover:text-white transition-colors uppercase tracking-widest font-bold">Contact HQ &rarr;</a>
               </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <!-- PROCESS -->
-      <section id="process" class="py-20 border-t border-gray-900 bg-page">
-         <div class="max-w-4xl mx-auto px-6 text-center reveal">
-            <h2 class="text-3xl font-bold text-white mb-12">Unlock Solutions in 3 Steps</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-               <div class="p-6">
-                  <div class="text-4xl font-bold text-brand-radar mb-4">01</div>
-                  <h3 class="text-white font-bold mb-2">Reach Out</h3>
-                  <p class="text-gray-500 text-sm">Connect via Facebook or Email to secure your slot.</p>
-               </div>
-               <div class="p-6">
-                  <div class="text-4xl font-bold text-brand-radar mb-4">02</div>
-                  <h3 class="text-white font-bold mb-2">Deep-Dive</h3>
-                  <p class="text-gray-500 text-sm">Engage in a focused session to discuss your issue.</p>
-               </div>
-               <div class="p-6">
-                  <div class="text-4xl font-bold text-brand-radar mb-4">03</div>
-                  <h3 class="text-white font-bold mb-2">Execution</h3>
-                  <p class="text-gray-500 text-sm">We implement tailored strategies to resolve the challenge.</p>
-               </div>
-            </div>
-         </div>
-      </section>
-
       <!-- ENDORSEMENTS -->
-      <section class="py-24 border-t border-gray-900 bg-glass relative overflow-hidden">
+      <section class="py-20 border-t border-gray-900 bg-glass relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 relative z-10">
           <h2 class="text-3xl font-bold text-center mb-16 text-white tracking-tightest reveal">Trusted by Leaders.</h2>
           <div class="grid md:grid-cols-3 gap-12">
@@ -403,7 +381,7 @@
       </section>
 
       <!-- CLIENT REVIEWS -->
-      <section id="reviews" class="py-24 px-6 bg-black">
+      <section id="reviews" class="py-20 px-6 bg-black">
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-16 reveal">
             <h2 class="text-3xl font-bold text-white tracking-tight">Client Stories</h2>
@@ -412,7 +390,7 @@
           <div class="grid md:grid-cols-2 gap-6">
             <div class="reveal glass-card p-8 rounded-2xl border-l-4 border-l-brand-primary">
               <div class="flex text-brand-radar mb-4 text-[10px] gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <p class="text-gray-300 italic mb-6">"Major Mahmud resolved multiple complex challenges within a few days. From disputes to job issues and financial fraud, his guidance was decisive."</p>
+              <p class="text-gray-300 italic mb-6">"Major Mahmud resolved multiple complex challenges within days. From disputes to job issues and financial fraud, his guidance was decisive."</p>
               <p class="font-bold text-white text-sm">– M.H., Dhaka</p>
             </div>
             <div class="reveal glass-card p-8 rounded-2xl border-l-4 border-l-brand-primary">
@@ -435,7 +413,7 @@
       </section>
 
       <!-- CONTACT -->
-      <section id="contact" class="py-32 px-6 bg-page">
+      <section id="contact" class="py-20 px-6 bg-page">
         <div class="max-w-3xl mx-auto text-center reveal">
           <h2 class="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">Let’s Solve It.</h2>
           <p class="text-gray-400 text-lg mb-4">If you need help, have questions, or want guidance, feel free to reach out.</p>
