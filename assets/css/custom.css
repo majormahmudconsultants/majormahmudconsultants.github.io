@@ -1,116 +1,137 @@
+/* ==========================================================================
+   MAJOR MAHMUD CONSULTANTS — PROFESSIONAL INSTITUTIONAL STYLING
+   Direction: Calm, objective, professional consulting practice language.
+   ========================================================================== */
+
 :root {
-  --brand-accent: #10b981;
-  --brand-glow: rgba(16, 185, 129, 0.4);
-  --bg-page: #000000;
-  --text-main: #F5F5F7;
-    --text-muted: #A1A1AA;
-  --header-height: 90px;
+  --sage-bg: #F5F7F6;
+  --sage-surface: #FFFFFF;
+  --sage-border: #D4DDD7;
+  --forest: #112921;
+  --forest-light: #1B3E32;
+  --forest-dark: #0A1B14;
+  --platinum: #738A7E;
+  --platinum-dark: #4A5E54;
+  --header-height: 92px;
 }
 
+/* ---------- base ---------- */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
-  background-color: var(--bg-page);
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--bg-page);
-  color: var(--text-main);
+  background-color: var(--sage-bg);
+  color: var(--forest);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: var(--brand-accent);
-  color: #000000;
-}
-
-[lang="bn"], .bangla-text, .font-bangla {
-  font-family: 'Noto Sans Bengali', sans-serif !important;
-  line-height: 1.7;
-  font-weight: 400;
-}
-
-h1, h2, h3, h4, h5, h6 {
+  background: var(--forest);
   color: #FFFFFF;
-  letter-spacing: -0.03em;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(30px) scale(0.98);
-  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity;
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--sage-bg); }
+::-webkit-scrollbar-thumb { background: var(--sage-border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--platinum); }
+
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
+h1, h2, h3, h4 { letter-spacing: -0.03em; }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #000000;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #333333;
-  border-radius: 20px;
-  border: 3px solid #000000;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: #555555;
-}
-
-.glass-effect {
-  background: rgba(20, 20, 20, 0.7);
+/* ---------- navigation ---------- */
+.nav-glass {
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--sage-border);
 }
 
-#scrollToTop {
-  z-index: 9999;
-  cursor: pointer;
-  min-width: 44px;
-  min-height: 44px;
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 2px;
+  background: var(--forest);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* ---------- hero entrance animation ---------- */
+.hero-rise {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroRise 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-rise:nth-child(1) { animation-delay: 0.05s; }
+.hero-rise:nth-child(2) { animation-delay: 0.15s; }
+.hero-rise:nth-child(3) { animation-delay: 0.25s; }
+
+.hero-portrait-rise {
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+  animation: heroRise 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.3s;
 }
 
-a:focus-visible, button:focus-visible {
-  outline: 2px solid var(--brand-accent);
-  outline-offset: 4px;
-  border-radius: 4px;
+@keyframes heroRise {
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-@media (max-width: 380px) {
-  h1 {
-    font-size: 2.25rem !important;
-    line-height: 1.1;
+/* ---------- scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- career timeline ---------- */
+.timeline { position: relative; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px; bottom: 8px; left: 11px;
+  width: 2px;
+  background: var(--sage-border);
+}
+.timeline-node { position: relative; padding-left: 2.75rem; }
+.timeline-node::before {
+  content: '';
+  position: absolute;
+  left: 5px; top: 8px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid var(--forest);
+}
+
+/* ---------- responsive tweaks ---------- */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .hero-rise, .hero-portrait-rise {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
-}
-
-.text-brand-radar {
-  color: #4ade80;
-  text-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
-}
-
-p {
-  color: #d1d5db;
-}
-
-h1, h2, h3, h4 {
-  color: #ffffff;
-}
-
-.glass-card {
-  background: #111111;
-  border: 1px solid #262626;
-}
-.glass-card:hover {
-  border-color: #4ade80;
-  transform: translateY(-2px);
 }
