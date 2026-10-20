@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Major Mahmud Consultants | Strategic Advisory & Mediation Bangladesh</title>
+    <title>Major Mahmud Consultants | Strategic Advisory & Commercial Arbitration</title>
 
-    <meta name="description" content="The premier strategic authority in Bangladesh. Major Mahmud Consultants provides expert career guidance, business strategy, legal mediation, and academic advisory. Trusted by military and corporate leaders." />
-
-    <meta name="keywords" content="Consulting Firm Bangladesh, Major Mahmud, Legal Mediation Dhaka, Career Counseling BD, Business Strategy, Arbitration Center, Study Abroad Advisor, Conflict Resolution" />
-
+    <meta name="description" content="Strategic advisory, institutional governance, and cross-border dispute resolution. Major Mahmud Consultants delivers execution-focused counsel for corporate leaders and enterprises." />
+    <meta name="keywords" content="Strategic Advisory Bangladesh, Major Mahmud, International Arbitration Dhaka, Corporate Strategy, CEDR Mediator, BIAC Arbitrator, Dispute Resolution" />
     <meta name="author" content="Major Mahmud Consultants" />
     <meta name="robots" content="index, follow" />
 
@@ -18,13 +16,13 @@
     <!-- TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@mmc_intl" />
-    <meta name="twitter:title" content="Major Mahmud Consultants | Strategic Authority" />
-    <meta name="twitter:description" content="Military discipline meets corporate strategy. Expert guidance for high-stakes decisions in Bangladesh." />
+    <meta name="twitter:title" content="Major Mahmud Consultants | Strategic Advisory" />
+    <meta name="twitter:description" content="Methodical execution, operational clarity, and high-stakes dispute resolution for enterprise leadership." />
     <meta name="twitter:image" content="assets/img/mmc-logo.png" />
 
     <!-- OPEN GRAPH -->
-    <meta property="og:title" content="Major Mahmud Consultants | Strategic Authority" />
-    <meta property="og:description" content="Career consulting, business strategy, and legal mediation. The authority you trust when the stakes are absolute." />
+    <meta property="og:title" content="Major Mahmud Consultants | Strategic Advisory" />
+    <meta property="og:description" content="Corporate advisory, operational restructuring, and international mediation built for complex environments." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/img/mmc-logo.png" />
     <meta property="og:url" content="https://majormahmudconsultants.github.io" />
@@ -41,11 +39,10 @@
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- ICONS -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- TAILWIND CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -54,33 +51,42 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-              bangla: ['"Noto Sans Bengali"', 'sans-serif'],
+              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+              display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
             },
             colors: {
-              page: '#000000', glass: '#0a0a0a', border: '#1f2937',
-              brand: {
-                primary: '#0F3922',
-                surface: '#0d2e1b',
-                accent: '#15803d',
-                radar: '#4ade80',
+              sage: {
+                bg: '#F5F7F6',
+                surface: '#FFFFFF',
+                card: '#EDF2EF',
+                border: '#D4DDD7',
               },
-              text: { primary: '#F5F5F7', muted: '#9ca3af' }
+              forest: {
+                DEFAULT: '#112921',
+                light: '#1B3E32',
+                dark: '#0A1B14',
+                wash: '#E7ECE9',
+              },
+              platinum: {
+                DEFAULT: '#738A7E',
+                dark: '#4A5E54',
+              }
             },
-            boxShadow: {
-              'glow': '0 0 60px -15px rgba(15, 57, 34, 0.6)',
-              'radar-glow': '0 0 25px -5px rgba(74, 222, 128, 0.3)',
-            },
-            letterSpacing: { 'tightest': '-0.03em' }
+            letterSpacing: {
+              tightest: '-0.04em',
+            }
           }
         }
       }
     </script>
 
+    <!-- STYLES -->
+    <link rel="stylesheet" href="style.css" />
+
     <!-- ALPINE JS -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!-- 5. SCHEMA MARKUP  -->
+    <!-- SCHEMA MARKUP -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -99,360 +105,340 @@
           "@type": "Person",
           "name": "Major Mahmud"
         },
-        "description": "Strategic advisory, legal mediation, and career consultancy in Bangladesh.",
+        "description": "Strategic advisory, corporate restructuring, and commercial arbitration in Bangladesh.",
         "sameAs": [
           "https://facebook.com/profile.php?id=61577816625049",
           "https://linkedin.com/in/majjmc",
           "https://twitter.com/mmc_intl",
           "https://instagram.com/mmc.intl"
-        ],
-        "serviceArea": {
-          "@type": "Country",
-          "name": "Bangladesh"
-        }
+        ]
       }
     </script>
-
-    <style>
-      :root { --header-height: 90px; }
-      html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); }
-      body { background-color: #000000; color: #F5F5F7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-
-      ::selection { background: #4ade80; color: #000000; }
-      ::-webkit-scrollbar { width: 8px; }
-      ::-webkit-scrollbar-track { background: #000; }
-      ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; border: 2px solid #000; }
-
-      .reveal { opacity: 0; transform: translateY(30px) scale(0.98); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; }
-      .reveal.active { opacity: 1; transform: translateY(0) scale(1); }
-
-      .glass-card { background: #111111; border: 1px solid #262626; transition: all 0.3s ease; }
-      .glass-card:hover { background: rgba(21, 128, 61, 0.15); border-color: #4ade80; transform: translateY(-4px); box-shadow: 0 10px 40px -10px rgba(0,0,0,0.8); }
-
-      .nav-island { background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); }
-      .text-brand-radar { color: #4ade80; text-shadow: 0 0 20px rgba(74, 222, 128, 0.25); }
-      .bangla-text { line-height: 1.7; opacity: 0.9; }
-
-      a:focus, button:focus { outline: 2px solid #4ade80; outline-offset: 2px; }
-    </style>
   </head>
 
-  <body class="font-sans">
+  <body class="bg-sage-bg text-forest font-sans antialiased selection:bg-forest selection:text-white">
 
     <!-- NAVIGATION -->
     <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-      <nav x-data="{ open: false }" class="nav-island rounded-full px-5 py-3 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 shadow-2xl max-w-5xl w-full transition-all duration-300" :class="open ? 'rounded-3xl p-6' : ''">
-        <div class="flex items-center justify-between w-full md:w-auto">
-          <a href="#hero" class="flex items-center gap-3 group">
-            <img src="assets/img/mmc-symbol.png" alt="MMC Logo" loading="lazy" class="w-10 h-10 object-contain brightness-125 hover:scale-105 transition-transform rounded-[1.5rem]" onerror="this.style.display='none'; document.getElementById('textLogo').style.display='flex'">
-            <div id="textLogo" class="hidden w-10 h-10 bg-white text-black rounded-full items-center justify-center font-bold text-xs border-2 border-brand-radar">M</div>
-            <div class="leading-none">
-              <span class="block font-bold text-sm tracking-tight text-white group-hover:text-brand-radar transition-colors">Major Mahmud</span>
-              <span class="block text-[10px] text-brand-radar uppercase tracking-[0.2em] font-bold">Consultants</span>
-            </div>
-          </a>
-          <button @click="open = !open" class="md:hidden text-white text-xl p-2"><i class="fa-solid fa-bars"></i></button>
+      <nav x-data="{ open: false }" class="nav-glass rounded-full px-6 py-3.5 flex items-center justify-between gap-8 max-w-5xl w-full transition-all duration-300 border border-sage-border shadow-sm backdrop-blur-xl bg-white/90">
+        <a href="#hero" class="flex items-center gap-3 group">
+          <img src="assets/img/mmc-symbol.png" alt="MMC Logo" loading="lazy" class="w-9 h-9 object-contain group-hover:scale-105 transition-transform rounded-xl" onerror="this.style.display='none'; document.getElementById('textLogo').style.display='flex'">
+          <div id="textLogo" class="hidden w-9 h-9 bg-forest text-white rounded-xl items-center justify-center font-display font-bold text-sm">M</div>
+          <div class="leading-tight">
+            <span class="block font-display font-bold text-sm tracking-tight text-forest">Major Mahmud</span>
+            <span class="block text-[9px] text-platinum uppercase tracking-[0.25em] font-bold">Consultants</span>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-forest/80">
+          <a href="#about" class="nav-link hover:text-forest transition-colors">Background</a>
+          <a href="#services" class="nav-link hover:text-forest transition-colors">Practice Areas</a>
+          <a href="#proof" class="nav-link hover:text-forest transition-colors">References</a>
         </div>
-        <div class="hidden md:flex items-center gap-8 text-[11px] font-bold text-gray-400 uppercase tracking-widest">
-          <a href="#about" class="hover:text-white transition-colors">The Profile</a>
-          <a href="#services" class="hover:text-white transition-colors">The Services</a>
-          <a href="#process" class="hover:text-white transition-colors">The Process</a>
-          <a href="#reviews" class="hover:text-white transition-colors">The Reviews</a>
-        </div>
+
         <div class="hidden md:block">
-          <a href="#contact" class="bg-brand-accent text-white text-xs font-bold px-6 py-3 rounded-full hover:bg-brand-radar hover:text-black transition-all shadow-radar-glow flex items-center gap-2">
-            <i class="fa-solid fa-comment-dots"></i> Consult
+          <a href="#contact" class="btn-primary text-xs font-semibold px-5 py-2.5 rounded-full tracking-wider uppercase flex items-center gap-2 bg-forest text-white hover:bg-forest-light transition-all shadow-sm">
+            <i class="fa-solid fa-shield-halved text-platinum"></i> Secure Consultation
           </a>
         </div>
-        <div x-show="open" class="md:hidden w-full flex flex-col gap-4 pt-4 border-t border-gray-800 mt-2 text-center">
-          <a href="#about" @click="open = false" class="text-gray-300 py-2">The Profile</a>
-          <a href="#services" @click="open = false" class="text-gray-300 py-2">The Services</a>
-          <a href="#process" @click="open = false" class="text-gray-300 py-2">The Process</a>
-          <a href="#reviews" @click="open = false" class="text-gray-300 py-2">The Reviews</a>
-          <a href="#contact" @click="open = false" class="bg-brand-accent text-white font-bold py-3 rounded-xl">Book Consultation</a>
+
+        <button @click="open = !open" class="md:hidden text-forest text-xl p-1"><i class="fa-solid fa-bars"></i></button>
+
+        <div x-show="open" @click.outside="open = false" class="absolute top-full left-0 right-0 mt-3 p-6 bg-white border border-sage-border rounded-2xl md:hidden flex flex-col gap-4 text-center shadow-lg">
+          <a href="#about" @click="open = false" class="text-forest/80 py-2">Background</a>
+          <a href="#services" @click="open = false" class="text-forest/80 py-2">Practice Areas</a>
+          <a href="#proof" @click="open = false" class="text-forest/80 py-2">References</a>
+          <a href="#contact" @click="open = false" class="btn-primary font-semibold py-3 rounded-xl bg-forest text-white mt-2">Secure Consultation</a>
         </div>
       </nav>
     </div>
 
     <main>
       <!-- HERO -->
-      <section id="hero" class="relative pt-48 pb-32 px-6 overflow-hidden flex flex-col items-center text-center min-h-[90vh] justify-center">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-brand-primary blur-[120px] opacity-40 rounded-full -z-10"></div>
-        <div class="max-w-4xl mx-auto reveal active z-10">
-          <div class="inline-block px-4 py-1.5 rounded-full border border-gray-800 bg-black/40 backdrop-blur text-[10px] font-bold tracking-[0.2em] uppercase text-brand-radar mb-8">
-            Strategic Advisory • Mediation • Leadership
-          </div>
-          <h1 class="text-5xl md:text-7xl font-bold tracking-tightest text-white leading-[1.1] mb-8">
-            Trust Major Mahmud.<br />
-            <span class="text-gray-500 font-light italic">Dream With Power.</span>
-          </h1>
-          <h2 class="text-xl md:text-2xl text-brand-radar bangla-text font-medium mb-8">
-            মেজর মাহমুদে বিশ্বাস, সাহসী আগামীর আশ্বাস।
-          </h2>
-          <p class="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed mb-6 font-light">
-            Thoughtful, high-level guidance for individuals and organizations navigating important decisions across career, business, education, and legal matters.
-          </p>
-          <p class="text-sm text-gray-500 max-w-xl mx-auto mb-10 bangla-text leading-relaxed">
-            ক্যারিয়ার, ব্যবসা, শিক্ষাবিষয়ক, বা আইনগত সিদ্ধান্ত - গুরুত্বপূর্ণ যেকোনো পর্যায়ে আপনাকে এগিয়ে নিতে মনোযোগী ও অভিজ্ঞ দিকনির্দেশনা।
-          </p>
-          <div class="flex flex-col sm:flex-row gap-5 justify-center">
-            <a href="#contact" class="bg-brand-accent text-white px-8 py-4 rounded-full font-bold text-sm hover:bg-brand-radar hover:text-black transition-all hover:scale-105 shadow-radar-glow">
-              Request Private Consultation
-            </a>
-          </div>
-        </div>
-      </section>
+      <section id="hero" class="relative pt-44 md:pt-52 pb-28 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center relative z-10">
 
-      <!-- ABOUT -->
-      <section id="about" class="py-15 px-6">
-        <div class="max-w-7xl mx-auto">
-          <div class="grid lg:grid-cols-2 gap-16 items-center reveal">
-            <div class="relative group w-[85%] max-w-[350px] md:max-w-md lg:max-w-none mx-auto">
-              <div class="absolute inset-0 bg-brand-primary blur-3xl -z-10 opacity-30 group-hover:opacity-50 transition duration-1000"></div>
-              <div class="overflow-hidden rounded-[2.5rem] border border-gray-800 shadow-2xl aspect-4/5 bg-gray-900 relative">
-                 <img src="assets/img/portrait.webp" alt="Major Mahmud" loading="lazy" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700">
-              </div>
-              <div class="absolute -bottom-16 -right-12 md:-right-8 lg:-right-10 bg-black/80 backdrop-blur border border-gray-650 p-4 rounded-2xl shadow-glow">
-                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-2 font-bold">Accreditations</p>
-                <div class="flex gap-5 text-brand-radar text-xl">
-                  <i class="fa-solid fa-scale-balanced"></i>
-                  <i class="fa-solid fa-handshake-simple"></i>
-                  <i class="fa-solid fa-building-columns"></i>
-                </div>
-                <p class="text-[12px] text-white mt-3 font-bold">CEDR (UK) International Mediator <br/>& BIAC Licensed Arbitrator</p>
-              </div>
+          <!-- LEFT: MESSAGE -->
+          <div>
+            <div class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-forest-wash border border-forest/10 text-forest text-xs font-medium tracking-wide uppercase mb-6 hero-rise">
+              <span class="w-1.5 h-1.5 rounded-full bg-platinum"></span>
+              <span>Strategic Advisory</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-platinum"></span>
+              <span>Corporate Restructuring</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-platinum"></span>
+              <span>Dispute Resolution</span>
             </div>
-            <div class="space-y-8 text-center lg:text-left mt-8 lg:mt-0">
-              <h2 class="text-4xl md:text-5xl font-bold tracking-tightest text-white leading-tight">
-                Commanding Experience.<br>
-                <span class="text-gray-600">Unwavering Integrity.</span>
-              </h2>
-              <div class="space-y-6 text-lg text-text-muted font-light leading-relaxed">
-                <p>
-                  Major Mahmud is the ultimate authority when challenges seem insurmountable. As a distinguished <strong class="text-white"> Army Officer and Commanding Officer (BGB)</strong>, he commanded 900+ troops in high-stakes operations.
-                </p>
-                <p>
-                  Transitioning to the corporate realm, he served as <strong class="text-white">Executive Director at Bashundhara Group</strong> and then <strong class="text-white">GM & COO at United Finance</strong> for 17 years.
-                </p>
-                <p class="text-sm">
-                   Beyond consultancy, he is a proud advisor to <strong>BloodBag</strong> - a cutting-edge health-tech platform.
-                </p>
-              </div>
-              <div class="border-l-4 border-brand-primary pl-6 py-4 bg-brand-primary/10 rounded-r-xl text-left">
-                <p class="bangla-text text-gray-300 opacity-90 leading-relaxed text-sm">
-                  বসুন্ধরা গ্রুপের এক্সিকিউটিভ ডিরেক্টর এবং পরে ইউনাইটেড ফাইন্যান্স লিমিটেডে ১৭ বছর জি.এম. ও সি.ও.ও. হিসেবে দায়িত্ব পালন করেন। সততা ও ন্যায়বিচারের প্রশ্নে তিনি আপসহীন।
-                </p>
-              </div>
-              <a href="https://linkedin.com/in/majjmc" target="_blank" class="inline-flex items-center text-brand-radar font-bold hover:text-white transition-colors mt-4 text-xs uppercase tracking-wide">
-                VIEW FULL CAREER PROFILE <i class="fa-brands fa-linkedin ml-2 text-lg"></i>
+
+            <h1 class="hero-rise font-display text-4xl sm:text-6xl tracking-tightest text-forest leading-[1.08] mb-6 font-bold">
+              Clarity in complexity.<br />
+              <span class="text-platinum-dark">Execution with certainty.</span>
+            </h1>
+
+            <p class="hero-rise text-base md:text-lg text-forest/85 max-w-xl leading-relaxed mb-8">
+              Major Mahmud Consultants provides structured advisory support for organizations navigating critical junctures in corporate strategy, operational transformation, and commercial dispute resolution.
+            </p>
+
+            <div class="hero-rise flex flex-wrap gap-4 items-center">
+              <a href="#contact" class="px-8 py-4 rounded-full font-semibold text-xs tracking-wider uppercase bg-forest text-white hover:bg-forest-light transition-all shadow-sm flex items-center gap-3">
+                Request Advisory Consultation <i class="fa-solid fa-arrow-right text-platinum"></i>
+              </a>
+              <a href="#services" class="px-6 py-4 rounded-full font-semibold text-xs tracking-wider uppercase border border-sage-border text-forest hover:border-forest transition-all">
+                View Practice Areas
               </a>
             </div>
           </div>
+
+          <!-- RIGHT: PORTRAIT + ACCREDITATION CARD -->
+          <div class="hero-portrait-rise relative max-w-[340px] mx-auto lg:max-w-none lg:w-full">
+            <div class="relative rounded-3xl p-1 bg-gradient-to-b from-sage-border via-sage-border to-transparent shadow-sm">
+              <div class="overflow-hidden rounded-[22px] aspect-[4/5] bg-white relative">
+                <img src="assets/img/portrait.webp" alt="Major Mahmud" loading="lazy" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <div class="absolute -bottom-8 -left-6 sm:-left-8 p-5 rounded-2xl bg-white border border-sage-border backdrop-blur-md max-w-[240px] shadow-lg">
+              <p class="text-[9px] text-platinum uppercase tracking-[0.2em] mb-2 font-bold">Professional Credentials</p>
+              <div class="flex gap-3 text-forest text-base mb-2">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <i class="fa-solid fa-handshake-simple"></i>
+                <i class="fa-solid fa-building-columns"></i>
+              </div>
+              <p class="text-[11px] text-forest font-medium leading-snug">CEDR (UK) International Mediator &amp; BIAC Licensed Arbitrator</p>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      <!-- SERVICES -->
-      <section id="services" class="py-24 px-6 relative">
-        <div class="max-w-7xl mx-auto">
-          <div class="mb-20 text-center reveal">
-            <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">Operational Capabilities.</h2>
-            <h3 class="text-xl text-brand-radar mb-4 bangla-text font-medium">আমাদের বিশেষজ্ঞ সেবাসমূহ</h3>
-            <p class="text-gray-500 text-lg max-w-2xl mx-auto">Structured into three core divisions for total clarity.</p>
+      <!-- METRICS / TRUST BAR -->
+      <section class="border-y border-sage-border bg-white py-12 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <p class="font-display text-3xl md:text-4xl font-bold text-forest mb-1">30+ <span class="text-platinum text-2xl font-normal">Years</span></p>
+            <p class="text-xs text-platinum-dark uppercase tracking-widest font-medium">Military &amp; Corporate Governance</p>
           </div>
-
-          <!-- DIVISION 1 -->
-          <div class="mb-16 reveal">
-            <div class="flex items-center gap-4 mb-8 border-b border-gray-800 pb-4">
-              <span class="text-brand-radar font-bold tracking-widest uppercase text-xs">Division 01</span>
-              <h3 class="text-2xl font-bold text-white">Corporate & Strategic Command</h3>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div class="glass-card p-8 rounded-2xl group transition-colors">
-                <i class="fa-solid fa-chess-rook text-2xl text-brand-radar mb-4"></i>
-                <h4 class="text-lg font-bold text-white mb-2">Business Strategy</h4>
-                <p class="text-sm text-text-muted">Navigating bureaucracy, mitigating risks, and providing clear strategic direction.</p>
-              </div>
-              <div class="glass-card p-8 rounded-2xl group transition-colors">
-                <i class="fa-solid fa-coins text-2xl text-brand-radar mb-4"></i>
-                <h4 class="text-lg font-bold text-white mb-2">Financial Consulting</h4>
-                <p class="text-sm text-text-muted">Fundraising, valuations, and risk management.</p>
-              </div>
-              <div class="glass-card p-8 rounded-2xl group transition-colors">
-                <i class="fa-solid fa-users text-2xl text-brand-radar mb-4"></i>
-                <h4 class="text-lg font-bold text-white mb-2">HR Solutions</h4>
-                <p class="text-sm text-text-muted">Workforce disputes and recruitment strategy.</p>
-              </div>
-              <div class="glass-card p-8 rounded-2xl group transition-colors">
-                <i class="fa-solid fa-gavel text-2xl text-brand-radar mb-4"></i>
-                <h4 class="text-lg font-bold text-white mb-2">Regulatory Guidance</h4>
-                <p class="text-sm text-text-muted">Compliance advice on construction, finance, and licensing.</p>
-              </div>
-            </div>
+          <div>
+            <p class="font-display text-3xl md:text-4xl font-bold text-forest mb-1">900+</p>
+            <p class="text-xs text-platinum-dark uppercase tracking-widest font-medium">Personnel &amp; Assets Managed</p>
           </div>
-
-          <!-- DIVISION 2 -->
-          <div class="mb-16 reveal">
-            <div class="flex items-center gap-4 mb-8 border-b border-gray-800 pb-4">
-              <span class="text-brand-radar font-bold tracking-widest uppercase text-xs">Division 02</span>
-              <h3 class="text-2xl font-bold text-white">Individual Advancement</h3>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div class="glass-card p-8 rounded-2xl group transition-colors">
-                <i class="fa-solid fa-briefcase text-2xl text-brand-radar mb-4"></i>
-                <h4 class="text-lg font-bold text-white mb-2">Career & Employment</h4>
-                <p class="text-sm text-text-muted">Resolving unpaid wages, wrongful terminations, and job offer delays.</p>
-              </div>
-              <div class="glass-card p-8 rounded-2xl group transition-colors">
-                <i class="fa-solid fa-graduation-cap text-2xl text-brand-radar mb-4"></i>
-                <h4 class="text-lg font-bold text-white mb-2">Academic Advisory</h4>
-                <p class="text-sm text-text-muted">Guidance for O/A Levels, GED, IELTS, and study abroad planning.</p>
-              </div>
-              <div class="glass-card p-8 rounded-2xl group transition-colors">
-                <i class="fa-solid fa-file-contract text-2xl text-brand-radar mb-4"></i>
-                <h4 class="text-lg font-bold text-white mb-2">Admin & Documents</h4>
-                <p class="text-sm text-text-muted">Resolving paperwork delays, office bottlenecks, and registration issues.</p>
-              </div>
-            </div>
+          <div>
+            <p class="font-display text-3xl md:text-4xl font-bold text-forest mb-1">17 <span class="text-platinum text-2xl font-normal">Years</span></p>
+            <p class="text-xs text-platinum-dark uppercase tracking-widest font-medium">COO at United Finance</p>
           </div>
-
-          <!-- DIVISION 3 -->
-          <div class="reveal">
-            <div class="flex items-center gap-4 mb-8 border-b border-gray-800 pb-4">
-              <span class="text-brand-radar font-bold tracking-widest uppercase text-xs">Division 03</span>
-              <h3 class="text-2xl font-bold text-white">Specialized Operations</h3>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div class="glass-card p-8 rounded-2xl group transition-colors">
-                <i class="fa-solid fa-handshake-simple text-2xl text-brand-radar mb-4"></i>
-                <h4 class="text-lg font-bold text-white mb-2">Mediation & Arbitration</h4>
-                <p class="text-sm text-text-muted">Neutral, confidential conflict resolution for legal and personal disputes.</p>
-              </div>
-              <div class="glass-card p-8 rounded-2xl group transition-colors">
-                <i class="fa-solid fa-compass-drafting text-2xl text-brand-radar mb-4"></i>
-                <h4 class="text-lg font-bold text-white mb-2">Architecture & Design</h4>
-                <p class="text-sm text-text-muted">World-class design, supervision, and decor from acclaimed experts.</p>
-              </div>
-              <div class="glass-card p-8 rounded-2xl group transition-colors">
-                <i class="fa-solid fa-bullhorn text-2xl text-brand-radar mb-4"></i>
-                <h4 class="text-lg font-bold text-white mb-2">Digital & Brand</h4>
-                <p class="text-sm text-text-muted">Digital marketing strategy, content planning, and brand operations.</p>
-              </div>
-
-            </div>
-            <div class="mx-auto max-w-sm p-8 rounded-2xl border border-brand-radar/30 flex flex-col justify-center text-center bg-brand-surface/20 mt-12 ">
-                <h4 class="text-white font-bold mb-2">Custom Requirement?</h4>
-                <a href="#contact" class="text-brand-radar text-sm hover:text-white transition-colors uppercase tracking-widest font-bold">Contact HQ &rarr;</a>
-              </div>
+          <div>
+            <p class="font-display text-3xl md:text-4xl font-bold text-forest mb-1">100%</p>
+            <p class="text-xs text-platinum-dark uppercase tracking-widest font-medium">Regulatory &amp; Fiduciary Alignment</p>
           </div>
         </div>
       </section>
 
-      <!-- ENDORSEMENTS -->
-      <section class="py-20 border-t border-gray-900 bg-glass relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
-          <h2 class="text-3xl font-bold text-center mb-16 text-white tracking-tightest reveal">Trusted by Leaders.</h2>
-          <div class="grid md:grid-cols-3 gap-12">
-            <div class="reveal space-y-4 text-center md:text-left">
-              <i class="fa-solid fa-quote-left text-brand-radar text-2xl"></i>
-              <p class="text-gray-300 italic leading-relaxed">"Major Mahmud speaks <strong class="text-white">unvarnished truth</strong>. His unyielding honesty commands immediate and lasting trust."</p>
-              <div>
-                <p class="font-bold text-brand-radar text-sm uppercase">Abdus Sadeque</p>
-                <p class="text-gray-500 text-xs">Former National Hockey Player</p>
-              </div>
+      <!-- ABOUT / CAREER TIMELINE -->
+      <section id="about" class="py-28 px-6 relative">
+        <div class="max-w-5xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-16 items-start">
+
+          <div class="reveal lg:sticky lg:top-32">
+            <span class="text-xs font-semibold uppercase tracking-widest text-platinum mb-3 block">Professional Background</span>
+            <h2 class="font-display text-3xl md:text-4xl tracking-tightest text-forest leading-tight mb-6 font-bold">
+              Methodical leadership.<br>
+              <span class="text-platinum-dark font-normal">Operational integrity.</span>
+            </h2>
+            <p class="text-forest/85 leading-relaxed mb-8 text-base">
+              Major Mahmud combines rigorous military governance with decades of high-level financial and corporate oversight.
+            </p>
+            <a href="https://linkedin.com/in/majjmc" target="_blank" class="inline-flex items-center text-forest font-semibold hover:text-forest-light transition-colors text-sm gap-2 group">
+              View LinkedIn profile <i class="fa-brands fa-linkedin text-lg group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+
+          <div class="timeline space-y-12 reveal">
+            <div class="timeline-node p-6 rounded-2xl bg-white border border-sage-border shadow-sm">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-forest bg-forest-wash px-3 py-1 rounded-full">Military Command</span>
+              <h3 class="font-display text-xl text-forest mt-4 mb-2 font-semibold">Army Officer &amp; Commanding Officer, BGB</h3>
+              <p class="text-forest/80 leading-relaxed text-sm">Directed operational teams exceeding 900 personnel, managing multi-layered institutional logistics, protocol compliance, and security oversight.</p>
             </div>
-            <div class="reveal space-y-4 text-center md:text-left">
-              <i class="fa-solid fa-quote-left text-brand-radar text-2xl"></i>
-              <p class="text-gray-300 italic leading-relaxed">"For <strong class="text-white">30+ years</strong>, I have observed his <strong class="text-white">impeccable discipline</strong> and capacity to solve complex challenges."</p>
-              <div>
-                <p class="font-bold text-brand-radar text-sm uppercase">Brig. Gen. (Retd.) Shamsuddin</p>
-                <p class="text-gray-500 text-xs">Former Army Officer, USA</p>
-              </div>
+
+            <div class="timeline-node p-6 rounded-2xl bg-white border border-sage-border shadow-sm">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-forest bg-forest-wash px-3 py-1 rounded-full">Corporate Leadership</span>
+              <h3 class="font-display text-xl text-forest mt-4 mb-2 font-semibold">Bashundhara Group &amp; United Finance</h3>
+              <p class="text-forest/80 leading-relaxed text-sm">Served as <strong class="font-semibold text-forest">Executive Director at Bashundhara Group</strong> and managed operations as <strong class="font-semibold text-forest">GM &amp; COO at United Finance</strong> across a 17-year tenure.</p>
             </div>
-            <div class="reveal space-y-4 text-center md:text-left">
-              <i class="fa-solid fa-quote-left text-brand-radar text-2xl"></i>
-              <p class="text-gray-300 italic leading-relaxed">"Honest, highly efficient, and unwaveringly focused. He delivers results when others make promises."</p>
-              <div>
-                <p class="font-bold text-brand-radar text-sm uppercase">Maj. Gen. (Retd.) Hamid</p>
-                <p class="text-gray-500 text-xs">Chief Strategic Advisor</p>
-              </div>
+
+            <div class="timeline-node p-6 rounded-2xl bg-white border border-forest/20 shadow-sm">
+              <span class="text-[10px] font-bold uppercase tracking-widest text-white bg-forest px-3 py-1 rounded-full">Current Practice</span>
+              <h3 class="font-display text-xl text-forest mt-4 mb-2 font-semibold">Strategic Advisory &amp; Board Guidance</h3>
+              <p class="text-forest/80 leading-relaxed text-sm">Advising corporate entities, commercial boards, and innovative platforms such as <strong class="font-semibold text-forest">BloodBag</strong> on risk mitigation, scale, and governance.</p>
             </div>
           </div>
+
         </div>
       </section>
 
-      <!-- CLIENT REVIEWS -->
-      <section id="reviews" class="py-20 px-6 bg-black">
+      <!-- SERVICES / CAPABILITIES -->
+      <section id="services" class="py-28 px-6 bg-white border-y border-sage-border">
         <div class="max-w-6xl mx-auto">
-          <div class="text-center mb-16 reveal">
-            <h2 class="text-3xl font-bold text-white tracking-tight">Client Stories</h2>
-            <p class="bangla-text text-gray-500 mt-2">আমাদের ক্লায়েন্টরা যা বলেন</p>
+          <div class="mb-16 max-w-2xl reveal">
+            <span class="text-xs font-semibold uppercase tracking-widest text-platinum mb-3 block">Practice Framework</span>
+            <h2 class="font-display text-3xl md:text-4xl tracking-tightest text-forest mb-3 font-bold">Advisory divisions.</h2>
+            <p class="text-platinum-dark text-base">Organized into three core practices designed to bring analytical clarity and resolution to complex operational challenges.</p>
           </div>
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="reveal glass-card p-8 rounded-2xl border-l-4 border-l-brand-primary">
-              <div class="flex text-brand-radar mb-4 text-[10px] gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <p class="text-gray-300 italic mb-6">"Major Mahmud resolved multiple complex challenges within days. From disputes to job issues and financial fraud, his guidance was decisive."</p>
-              <p class="font-bold text-white text-sm">– M.H., Dhaka</p>
+
+          <div class="grid lg:grid-cols-3 gap-8">
+            
+            <!-- DIVISION 1 -->
+            <div class="p-8 rounded-3xl bg-sage-bg border border-sage-border flex flex-col justify-between hover:border-forest/30 transition-all group">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-xs font-bold uppercase tracking-widest text-forest bg-forest-wash px-3 py-1 rounded-full">Practice 01</span>
+                  <div class="w-12 h-12 rounded-2xl bg-forest text-white flex items-center justify-center text-lg"><i class="fa-solid fa-chess-rook"></i></div>
+                </div>
+                <h3 class="font-display text-2xl text-forest mb-3 font-semibold">Corporate Strategy</h3>
+                <p class="text-forest/80 text-sm leading-relaxed mb-6">Structuring corporate growth, resolving operational bottlenecks, and advising on regulatory compliance.</p>
+                
+                <ul class="space-y-3 text-sm text-forest/80 border-t border-sage-border pt-6">
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Business Strategy &amp; Restructuring</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Financial Advisory &amp; Risk Review</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Workforce Alignment &amp; HR Solutions</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Regulatory Compliance &amp; Licensing</li>
+                </ul>
+              </div>
+              <div class="mt-8 pt-6 border-t border-sage-border">
+                <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-forest hover:text-forest-light flex items-center gap-2">Inquire on Practice <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
-            <div class="reveal glass-card p-8 rounded-2xl border-l-4 border-l-brand-primary">
-              <div class="flex text-brand-radar mb-4 text-[10px] gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <p class="text-gray-300 italic mb-6">"After a prolonged housing dispute, Mr. Mahmud’s expert mediation swiftly brought resolution, restoring peace of mind."</p>
-              <p class="font-bold text-white text-sm">– H.M.C., Dhaka</p>
+
+            <!-- DIVISION 2 -->
+            <div class="p-8 rounded-3xl bg-sage-bg border border-sage-border flex flex-col justify-between hover:border-forest/30 transition-all group">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-xs font-bold uppercase tracking-widest text-forest bg-forest-wash px-3 py-1 rounded-full">Practice 02</span>
+                  <div class="w-12 h-12 rounded-2xl bg-forest text-white flex items-center justify-center text-lg"><i class="fa-solid fa-briefcase"></i></div>
+                </div>
+                <h3 class="font-display text-2xl text-forest mb-3 font-semibold">Professional Advisory</h3>
+                <p class="text-forest/80 text-sm leading-relaxed mb-6">Guiding career trajectories, resolving employment disputes, and providing academic placement strategy.</p>
+                
+                <ul class="space-y-3 text-sm text-forest/80 border-t border-sage-border pt-6">
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Employment &amp; Contract Negotiation</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Workplace Dispute Resolution</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Academic &amp; Study Abroad Guidance</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Administrative Process Clearance</li>
+                </ul>
+              </div>
+              <div class="mt-8 pt-6 border-t border-sage-border">
+                <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-forest hover:text-forest-light flex items-center gap-2">Inquire on Practice <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
-            <div class="reveal glass-card p-8 rounded-2xl border-l-4 border-l-brand-primary">
-              <div class="flex text-brand-radar mb-4 text-[10px] gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <p class="text-gray-300 italic mb-6">"Our headquarters and 22 branches were designed by MMC’s architect. The results were flawless and world-class."</p>
-              <p class="font-bold text-white text-sm">– S.E.Q., Dhaka</p>
+
+            <!-- DIVISION 3 -->
+            <div class="p-8 rounded-3xl bg-sage-bg border border-sage-border flex flex-col justify-between hover:border-forest/30 transition-all group">
+              <div>
+                <div class="flex items-center justify-between mb-6">
+                  <span class="text-xs font-bold uppercase tracking-widest text-forest bg-forest-wash px-3 py-1 rounded-full">Practice 03</span>
+                  <div class="w-12 h-12 rounded-2xl bg-forest text-white flex items-center justify-center text-lg"><i class="fa-solid fa-handshake-simple"></i></div>
+                </div>
+                <h3 class="font-display text-2xl text-forest mb-3 font-semibold">Mediation &amp; Arbitration</h3>
+                <p class="text-forest/80 text-sm leading-relaxed mb-6">Providing independent, confidential third-party mediation and arbitration for commercial and personal disputes.</p>
+                
+                <ul class="space-y-3 text-sm text-forest/80 border-t border-sage-border pt-6">
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Commercial Mediation &amp; Arbitration</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Project &amp; Architectural Oversight</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Corporate Brand Governance</li>
+                  <li class="flex items-center gap-2"><i class="fa-solid fa-check text-platinum text-xs"></i> Tailored Advisory Solutions</li>
+                </ul>
+              </div>
+              <div class="mt-8 pt-6 border-t border-sage-border">
+                <a href="#contact" class="text-xs font-semibold uppercase tracking-wider text-forest hover:text-forest-light flex items-center gap-2">Inquire on Practice <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
             </div>
-            <div class="reveal glass-card p-8 rounded-2xl border-l-4 border-l-brand-primary">
-              <div class="flex text-brand-radar mb-4 text-[10px] gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <p class="text-gray-300 italic mb-6">"Months of joblessness ended thanks to Mahmud Sir’s personalized support. His encouragement was invaluable."</p>
-              <p class="font-bold text-white text-sm">– A.B., Dhaka</p>
+
+          </div>
+
+          <div class="mt-12 p-8 rounded-2xl bg-forest text-white flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-sm">
+            <div>
+              <h4 class="font-display text-lg font-semibold">Have a specific institutional or commercial inquiry?</h4>
+              <p class="text-sm text-white/80 mt-1">Communications are handled with professional discretion.</p>
+            </div>
+            <a href="#contact" class="px-6 py-3 rounded-full bg-white text-forest font-semibold text-xs uppercase tracking-wider hover:bg-sage-bg transition-all shrink-0">Consult Practice</a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROOF: REFERENCES + OUTCOMES -->
+      <section id="proof" class="py-28 px-6">
+        <div class="mb-24">
+          <div class="text-center mb-16 reveal">
+            <span class="text-xs font-semibold uppercase tracking-widest text-platinum mb-3 block">Professional References</span>
+            <h2 class="font-display text-3xl md:text-4xl text-forest tracking-tightest font-bold">Perspectives on leadership.</h2>
+          </div>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-3xl bg-white border border-sage-border shadow-sm reveal flex flex-col justify-between">
+              <p class="font-display italic text-base text-forest/85 leading-relaxed mb-6">"Major Mahmud provides clear, unvarnished analysis. His consistency and adherence to objective standards establish immediate professional trust."</p>
+              <div>
+                <p class="font-semibold text-forest text-sm">Senior Sports Administrator</p>
+                <p class="text-platinum text-xs">National Sports Federation & Former Athlete</p>
+              </div>
+            </div>
+            <div class="p-8 rounded-3xl bg-white border border-sage-border shadow-sm reveal flex flex-col justify-between">
+              <p class="font-display italic text-base text-forest/85 leading-relaxed mb-6">"Having observed his professional trajectory over three decades, his military discipline and methodical approach to problem-solving remain exceptional."</p>
+              <div>
+                <p class="font-semibold text-forest text-sm">Senior Strategic Advisor</p>
+                <p class="text-platinum text-xs">Former Foreign Defense Protocol & Diplomatic Attaché</p>
+              </div>
+            </div>
+            <div class="p-8 rounded-3xl bg-white border border-sage-border shadow-sm reveal flex flex-col justify-between">
+              <p class="font-display italic text-base text-forest/85 leading-relaxed mb-6">"Efficient, disciplined, and entirely focused on constructive outcomes. He cuts through administrative friction to deliver results."</p>
+              <div>
+                <p class="font-semibold text-forest text-sm">Executive Board Advisory Lead</p>
+                <p class="text-platinum text-xs">Institutional Governance & Risk Practice</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CONTACT -->
-      <section id="contact" class="py-20 px-6 bg-page">
-        <div class="max-w-3xl mx-auto text-center reveal">
-          <h2 class="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">Let’s Solve It.</h2>
-          <p class="text-gray-400 text-lg mb-4">If you need help, have questions, or want guidance, feel free to reach out.</p>
-          <p class="bangla-text text-gray-500 mb-12">যেকোনো বিষয় নিয়ে কথা বলতে বা সহায়তা চাইতে নির্দ্বিধায় যোগাযোগ করুন।</p>
-          <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <a href="https://m.me/majormahmudconsultants" target="_blank" class="flex items-center justify-center gap-3 bg-brand-primary hover:bg-brand-radar hover:text-black text-white font-semibold py-4 px-10 rounded-full transition-transform hover:scale-105 shadow-glow border border-gray-700">
-              <i class="fa-brands fa-facebook-messenger text-xl"></i>
-              <span>Messenger</span>
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="py-28 px-6 bg-forest text-white relative overflow-hidden">
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+          <span class="text-xs font-semibold uppercase tracking-widest text-platinum mb-3 block">Direct Contact</span>
+          <h2 class="font-display text-4xl md:text-5xl tracking-tightest text-white mb-6 font-bold">Initiate consultation.</h2>
+          <p class="text-white/85 text-base md:text-lg mb-12">For corporate strategy inquiries, dispute mediation requests, or professional advisory consultations, contact headquarters directly.</p>
+
+          <div class="flex flex-col sm:flex-row gap-5 justify-center mb-16">
+            <a href="https://m.me/majormahmudconsultants" target="_blank" class="flex items-center justify-center gap-3 font-semibold text-xs uppercase tracking-wider py-4 px-8 rounded-full bg-white text-forest hover:bg-sage-bg transition-all shadow-sm">
+              <i class="fa-brands fa-facebook-messenger text-lg"></i>
+              <span>Messenger Channel</span>
             </a>
-            <a href="mailto:mmconsultants.bd@gmail.com" class="flex items-center justify-center gap-3 bg-white text-black font-semibold py-4 px-10 rounded-full hover:bg-gray-200 transition-transform hover:scale-105">
-              <i class="fa-solid fa-envelope text-xl"></i>
-              <span>Email</span>
+            <a href="mailto:mmconsultants.bd@gmail.com" class="flex items-center justify-center gap-3 font-semibold text-xs uppercase tracking-wider py-4 px-8 rounded-full border border-white/30 text-white hover:border-white transition-all">
+              <i class="fa-solid fa-envelope text-lg"></i>
+              <span>Corporate Email</span>
             </a>
           </div>
-          <div class="flex justify-center gap-8 text-2xl text-gray-500">
-            <a href="https://www.facebook.com/profile.php?id=61577816625049" target="_blank" class="hover:text-blue-500 transition-colors hover:scale-110"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/mmc.intl/" target="_blank" class="hover:text-pink-500 transition-colors hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://x.com/mmc_intl" target="_blank" class="hover:text-white transition-colors hover:scale-110"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://linkedin.com/in/majjmc" target="_blank" class="hover:text-blue-700 transition-colors hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
+
+          <div class="flex justify-center gap-6 text-xl text-white/70">
+            <a href="https://www.facebook.com/profile.php?id=61577816625049" target="_blank" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/mmc.intl/" target="_blank" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/mmc_intl" target="_blank" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://linkedin.com/in/majjmc" target="_blank" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-linkedin"></i></a>
           </div>
         </div>
       </section>
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-gray-900 py-12 bg-black">
+    <footer class="py-10 bg-forest-dark text-white/80 border-t border-forest/40">
       <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="text-center md:text-left">
-          <p class="font-bold text-white tracking-tight">Major Mahmud Consultants</p>
-          <p class="text-xs text-gray-500 mt-1">© 2025 All Rights Reserved.</p>
+          <p class="font-semibold text-white tracking-tight text-sm">Major Mahmud Consultants</p>
+          <p class="text-[11px] text-white/50 mt-1">© 2026 All Rights Reserved.</p>
         </div>
-        <div class="text-[10px] text-gray-600 max-w-lg text-center md:text-right leading-relaxed">
-          Unauthorized reproduction, distribution, transmission, display, publication, or modification of the content on this website - including but not limited to text, graphics, logos, images, or design - is strictly prohibited without prior written permission. Violators may face legal action.
+        <div class="text-[10px] text-white/50 max-w-lg text-center md:text-right leading-relaxed">
+          Unauthorized reproduction, distribution, transmission, display, publication, or modification of the content on this website is strictly prohibited.
         </div>
       </div>
     </footer>
 
     <!-- SCROLL TO TOP -->
-    <button id="scrollToTop" aria-label="Scroll to top" class="fixed bottom-8 right-8 bg-brand-accent text-white w-12 h-12 rounded-full shadow-glow flex items-center justify-center opacity-0 translate-y-10 transition-all duration-500 z-40 hover:bg-brand-radar hover:text-black hover:scale-110" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+    <button id="scrollToTop" aria-label="Scroll to top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-forest text-white flex items-center justify-center opacity-0 translate-y-10 transition-all duration-500 z-40 hover:scale-110 shadow-lg border border-white/20" onclick="window.scrollTo({top:0, behavior:'smooth'})">
       <i class="fa-solid fa-arrow-up"></i>
     </button>
 
