@@ -5,16 +5,23 @@
 :root {
   --sage-bg: #F5F7F6;
   --sage-surface: #FFFFFF;
+  --sage-card: #EDF2EF;
   --sage-border: #D4DDD7;
   --forest: #112921;
   --forest-light: #1B3E32;
   --forest-dark: #0A1B14;
+  --forest-wash: #E7ECE9;
   --platinum: #738A7E;
   --platinum-dark: #4A5E54;
   --header-height: 92px;
 }
 
-/* ---------- base ---------- */
+/* ---------- PREVENT ALPINE & MOBILE FLASH/GLITCH (FOUC) ---------- */
+[x-cloak] {
+  display: none !important;
+}
+
+/* ---------- BASE & RESET ---------- */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
@@ -33,20 +40,35 @@ body {
   color: #FFFFFF;
 }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--sage-bg); }
-::-webkit-scrollbar-thumb { background: var(--sage-border); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--platinum); }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--sage-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sage-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--platinum);
+}
 
-a:focus-visible, button:focus-visible, input:focus-visible {
+/* Focus States for Accessibility */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible {
   outline: 2px solid var(--forest);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-h1, h2, h3, h4 { letter-spacing: -0.03em; }
+h1, h2, h3, h4 {
+  letter-spacing: -0.03em;
+}
 
-/* ---------- navigation ---------- */
+/* ---------- NAVIGATION GLASS EFFECT ---------- */
 .nav-glass {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
@@ -60,16 +82,20 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 .nav-link::after {
   content: '';
   position: absolute;
-  left: 0; right: 0; bottom: -4px;
+  left: 0; 
+  right: 0; 
+  bottom: -4px;
   height: 2px;
   background: var(--forest);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.nav-link:hover::after { transform: scaleX(1); }
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
 
-/* ---------- hero entrance animation ---------- */
+/* ---------- HERO ENTRANCE ANIMATIONS ---------- */
 .hero-rise {
   opacity: 0;
   transform: translateY(20px);
@@ -87,47 +113,70 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 }
 
 @keyframes heroRise {
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-/* ---------- scroll reveal ---------- */
+/* ---------- SCROLL REVEAL ---------- */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ---------- career timeline ---------- */
-.timeline { position: relative; }
+/* ---------- CAREER TIMELINE ---------- */
+.timeline {
+  position: relative;
+}
 .timeline::before {
   content: '';
   position: absolute;
-  top: 8px; bottom: 8px; left: 11px;
+  top: 8px; 
+  bottom: 8px; 
+  left: 11px;
   width: 2px;
   background: var(--sage-border);
 }
-.timeline-node { position: relative; padding-left: 2.75rem; }
+.timeline-node {
+  position: relative;
+  padding-left: 2.75rem;
+}
 .timeline-node::before {
   content: '';
   position: absolute;
-  left: 5px; top: 8px;
-  width: 14px; height: 14px;
+  left: 5px; 
+  top: 8px;
+  width: 14px; 
+  height: 14px;
   border-radius: 50%;
   background: #FFFFFF;
   border: 3px solid var(--forest);
 }
 
-/* ---------- responsive tweaks ---------- */
+/* ---------- MOBILE VIEWPORT FIXES ---------- */
+@supports (-webkit-touch-callout: none) {
+  .hero-mobile-fix {
+    min-height: -webkit-fill-available;
+  }
+}
+
 @media (max-width: 768px) {
-  h1 { font-size: 2.5rem !important; }
+  h1 {
+    font-size: 2.5rem !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .hero-rise, .hero-portrait-rise {
+  .reveal, 
+  .hero-rise, 
+  .hero-portrait-rise {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
