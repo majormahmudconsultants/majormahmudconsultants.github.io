@@ -83,6 +83,11 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="style.css" />
 
+    <!-- ANTI-GLITCH FIX FOR ALPINE JS & MOBILE VIEWPORTS -->
+    <style>
+      [x-cloak] { display: none !important; }
+    </style>
+
     <!-- ALPINE JS -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -142,9 +147,10 @@
           </a>
         </div>
 
-        <button @click="open = !open" class="md:hidden text-forest text-xl p-1"><i class="fa-solid fa-bars"></i></button>
+        <button @click="open = !open" class="md:hidden text-forest text-xl p-1" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
 
-        <div x-show="open" @click.outside="open = false" class="absolute top-full left-0 right-0 mt-3 p-6 bg-white border border-sage-border rounded-2xl md:hidden flex flex-col gap-4 text-center shadow-lg">
+        <!-- MOBILE MENU WITH X-CLOAK PREVENTING GLITCH -->
+        <div x-show="open" x-cloak @click.outside="open = false" class="absolute top-full left-0 right-0 mt-3 p-6 bg-white border border-sage-border rounded-2xl md:hidden flex flex-col gap-4 text-center shadow-lg">
           <a href="#about" @click="open = false" class="text-forest/80 py-2">Background</a>
           <a href="#services" @click="open = false" class="text-forest/80 py-2">Practice Areas</a>
           <a href="#proof" @click="open = false" class="text-forest/80 py-2">References</a>
@@ -223,7 +229,7 @@
           </div>
           <div>
             <p class="font-display text-3xl md:text-4xl font-bold text-forest mb-1">17 <span class="text-platinum text-2xl font-normal">Years</span></p>
-            <p class="text-xs text-platinum-dark uppercase tracking-widest font-medium">COO at United Finance</p>
+            <p class="text-xs text-platinum-dark uppercase tracking-widest font-medium">COO Leadership Tenure</p>
           </div>
           <div>
             <p class="font-display text-3xl md:text-4xl font-bold text-forest mb-1">100%</p>
@@ -243,7 +249,7 @@
               <span class="text-platinum-dark font-normal">Operational integrity.</span>
             </h2>
             <p class="text-forest/85 leading-relaxed mb-8 text-base">
-              Major Mahmud combines rigorous military governance with decades of high-level financial and corporate oversight.
+              Major Mahmud combines rigorous military governance with high-level financial and corporate oversight.
             </p>
             <a href="https://linkedin.com/in/majjmc" target="_blank" class="inline-flex items-center text-forest font-semibold hover:text-forest-light transition-colors text-sm gap-2 group">
               View LinkedIn profile <i class="fa-brands fa-linkedin text-lg group-hover:translate-x-1 transition-transform"></i>
@@ -251,22 +257,41 @@
           </div>
 
           <div class="timeline space-y-12 reveal">
+            <!-- MILITARY COMMAND NODE -->
             <div class="timeline-node p-6 rounded-2xl bg-white border border-sage-border shadow-sm">
               <span class="text-[10px] font-bold uppercase tracking-widest text-forest bg-forest-wash px-3 py-1 rounded-full">Military Command</span>
               <h3 class="font-display text-xl text-forest mt-4 mb-2 font-semibold">Army Officer &amp; Commanding Officer, BGB</h3>
-              <p class="text-forest/80 leading-relaxed text-sm">Directed operational teams exceeding 900 personnel, managing multi-layered institutional logistics, protocol compliance, and security oversight.</p>
+              <p class="text-forest/80 leading-relaxed text-sm mb-3">
+                Directed operational formations exceeding 900 personnel, managing multi-layered institutional logistics, protocol compliance, and sovereign border defense.
+              </p>
+              <ul class="space-y-2 text-xs text-forest/75 border-t border-sage-border/60 pt-3">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-circle-check text-platinum text-[10px] mt-0.5 shrink-0"></i>
+                  <span>Veteran of international coalition operations during the Gulf War.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-circle-check text-platinum text-[10px] mt-0.5 shrink-0"></i>
+                  <span>Led high-stakes tactical engagements to preserve territorial integrity, successfully resolving complex border demarcation disputes with high regard across command leadership.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-circle-check text-platinum text-[10px] mt-0.5 shrink-0"></i>
+                  <span>Executed decisive counter-insurgency operations, neutralizing regional security threats and restoring operational stability to widespread institutional appreciation.</span>
+                </li>
+              </ul>
             </div>
 
+            <!-- CORPORATE LEADERSHIP NODE -->
             <div class="timeline-node p-6 rounded-2xl bg-white border border-sage-border shadow-sm">
               <span class="text-[10px] font-bold uppercase tracking-widest text-forest bg-forest-wash px-3 py-1 rounded-full">Corporate Leadership</span>
-              <h3 class="font-display text-xl text-forest mt-4 mb-2 font-semibold">Bashundhara Group &amp; United Finance</h3>
-              <p class="text-forest/80 leading-relaxed text-sm">Served as <strong class="font-semibold text-forest">Executive Director at Bashundhara Group</strong> and managed operations as <strong class="font-semibold text-forest">GM &amp; COO at United Finance</strong> across a 17-year tenure.</p>
+              <h3 class="font-display text-xl text-forest mt-4 mb-2 font-semibold">Bashundhara Group &amp; United Finance PLC</h3>
+              <p class="text-forest/80 leading-relaxed text-sm">Executive Director at Bashundhara Group and operational lead as GM &amp; COO at United Finance across a 17-year tenure.</p>
             </div>
 
+            <!-- STRATEGIC ADVISORY NODE -->
             <div class="timeline-node p-6 rounded-2xl bg-white border border-forest/20 shadow-sm">
-              <span class="text-[10px] font-bold uppercase tracking-widest text-white bg-forest px-3 py-1 rounded-full">Current Practice</span>
-              <h3 class="font-display text-xl text-forest mt-4 mb-2 font-semibold">Strategic Advisory &amp; Board Guidance</h3>
-              <p class="text-forest/80 leading-relaxed text-sm">Advising corporate entities, commercial boards, and innovative platforms such as <strong class="font-semibold text-forest">BloodBag</strong> on risk mitigation, scale, and governance.</p>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-white bg-forest px-3 py-1 rounded-full">Strategic Advisory</span>
+              <h3 class="font-display text-xl text-forest mt-4 mb-2 font-semibold">Advisory &amp; Board Guidance</h3>
+              <p class="text-forest/80 leading-relaxed text-sm">Advisor to corporate entities, commercial boards, and innovative platforms such as <strong class="font-semibold text-forest">BloodBag</strong> on risk mitigation, scaling, and governance.</p>
             </div>
           </div>
 
@@ -365,34 +390,68 @@
 
       <!-- PROOF: REFERENCES + OUTCOMES -->
       <section id="proof" class="py-28 px-6">
-        <div class="mb-24">
-          <div class="text-center mb-16 reveal">
-            <span class="text-xs font-semibold uppercase tracking-widest text-platinum mb-3 block">Professional References</span>
-            <h2 class="font-display text-3xl md:text-4xl text-forest tracking-tightest font-bold">Perspectives on leadership.</h2>
+        <div class="max-w-6xl mx-auto">
+
+          <!-- ANONYMIZED PROFESSIONAL REFERENCES -->
+          <div class="mb-24">
+            <div class="text-center mb-16 reveal">
+              <span class="text-xs font-semibold uppercase tracking-widest text-platinum mb-3 block">Professional References</span>
+              <h2 class="font-display text-3xl md:text-4xl text-forest tracking-tightest font-bold">Perspectives on leadership.</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+              <div class="p-8 rounded-3xl bg-white border border-sage-border shadow-sm reveal flex flex-col justify-between">
+                <p class="font-display italic text-base text-forest/85 leading-relaxed mb-6">"Major Mahmud provides clear, unvarnished analysis. His consistency and adherence to objective standards establish immediate professional trust."</p>
+                <div>
+                  <p class="font-semibold text-forest text-sm">Senior Sports Administrator</p>
+                  <p class="text-platinum text-xs">National Sports Federation & Athlete</p>
+                </div>
+              </div>
+              <div class="p-8 rounded-3xl bg-white border border-sage-border shadow-sm reveal flex flex-col justify-between">
+                <p class="font-display italic text-base text-forest/85 leading-relaxed mb-6">"Having observed his professional trajectory over three decades, his military discipline and methodical approach to problem-solving remain exceptional."</p>
+                <div>
+                  <p class="font-semibold text-forest text-sm">Senior Strategic Advisor</p>
+                  <p class="text-platinum text-xs">Foreign Defense Protocol & Diplomatic Attaché</p>
+                </div>
+              </div>
+              <div class="p-8 rounded-3xl bg-white border border-sage-border shadow-sm reveal flex flex-col justify-between">
+                <p class="font-display italic text-base text-forest/85 leading-relaxed mb-6">"Efficient, disciplined, and entirely focused on constructive outcomes. He cuts through administrative friction to deliver results."</p>
+                <div>
+                  <p class="font-semibold text-forest text-sm">Executive Board Advisory Lead</p>
+                  <p class="text-platinum text-xs">Institutional Governance & Risk Practice</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 rounded-3xl bg-white border border-sage-border shadow-sm reveal flex flex-col justify-between">
-              <p class="font-display italic text-base text-forest/85 leading-relaxed mb-6">"Major Mahmud provides clear, unvarnished analysis. His consistency and adherence to objective standards establish immediate professional trust."</p>
-              <div>
-                <p class="font-semibold text-forest text-sm">Senior Sports Administrator</p>
-                <p class="text-platinum text-xs">National Sports Federation & Former Athlete</p>
-              </div>
+
+          <!-- ENGAGEMENT OUTCOMES -->
+          <div>
+            <div class="text-center mb-12 reveal">
+              <h3 class="font-display text-2xl text-forest tracking-tight font-bold">Engagement outcomes</h3>
             </div>
-            <div class="p-8 rounded-3xl bg-white border border-sage-border shadow-sm reveal flex flex-col justify-between">
-              <p class="font-display italic text-base text-forest/85 leading-relaxed mb-6">"Having observed his professional trajectory over three decades, his military discipline and methodical approach to problem-solving remain exceptional."</p>
-              <div>
-                <p class="font-semibold text-forest text-sm">Senior Strategic Advisor</p>
-                <p class="text-platinum text-xs">Former Foreign Defense Protocol & Diplomatic Attaché</p>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="p-8 rounded-2xl bg-white border border-sage-border shadow-sm reveal">
+                <div class="flex text-platinum mb-4 text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-forest/80 italic mb-6 text-sm">"Major Mahmud mediated multiple operational disputes within days, providing the analytical structure needed to reach a clean resolution."</p>
+                <p class="font-semibold text-forest text-xs tracking-wider uppercase">– Corporate Client, Dhaka</p>
               </div>
-            </div>
-            <div class="p-8 rounded-3xl bg-white border border-sage-border shadow-sm reveal flex flex-col justify-between">
-              <p class="font-display italic text-base text-forest/85 leading-relaxed mb-6">"Efficient, disciplined, and entirely focused on constructive outcomes. He cuts through administrative friction to deliver results."</p>
-              <div>
-                <p class="font-semibold text-forest text-sm">Executive Board Advisory Lead</p>
-                <p class="text-platinum text-xs">Institutional Governance & Risk Practice</p>
+              <div class="p-8 rounded-2xl bg-white border border-sage-border shadow-sm reveal">
+                <div class="flex text-platinum mb-4 text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-forest/80 italic mb-6 text-sm">"Following a complex property negotiation, his expert mediation brought a swift, equitable outcome that prevented further escalation."</p>
+                <p class="font-semibold text-forest text-xs tracking-wider uppercase">– Property Holding Representative</p>
+              </div>
+              <div class="p-8 rounded-2xl bg-white border border-sage-border shadow-sm reveal">
+                <div class="flex text-platinum mb-4 text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-forest/80 italic mb-6 text-sm">"Our institutional office infrastructure oversight was managed efficiently under MMC guidelines, resulting in a seamless operational layout."</p>
+                <p class="font-semibold text-forest text-xs tracking-wider uppercase">– Operations Director, Financial Sector</p>
+              </div>
+              <div class="p-8 rounded-2xl bg-white border border-sage-border shadow-sm reveal">
+                <div class="flex text-platinum mb-4 text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-forest/80 italic mb-6 text-sm">"Professional bottlenecks and contractual delays were resolved swiftly thanks to Mahmud Sir's direct, pragmatic intervention."</p>
+                <p class="font-semibold text-forest text-xs tracking-wider uppercase">– Executive Director</p>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -415,10 +474,10 @@
           </div>
 
           <div class="flex justify-center gap-6 text-xl text-white/70">
-            <a href="https://www.facebook.com/profile.php?id=61577816625049" target="_blank" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/mmc.intl/" target="_blank" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://x.com/mmc_intl" target="_blank" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://linkedin.com/in/majjmc" target="_blank" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61577816625049" target="_blank" aria-label="Facebook Profile" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/mmc.intl/" target="_blank" aria-label="Instagram Profile" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/mmc_intl" target="_blank" aria-label="X Profile" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://linkedin.com/in/majjmc" target="_blank" aria-label="LinkedIn Profile" class="hover:text-white transition-colors hover:scale-110 p-2"><i class="fa-brands fa-linkedin"></i></a>
           </div>
         </div>
       </section>
@@ -429,7 +488,7 @@
       <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="text-center md:text-left">
           <p class="font-semibold text-white tracking-tight text-sm">Major Mahmud Consultants</p>
-          <p class="text-[11px] text-white/50 mt-1">© 2026 All Rights Reserved.</p>
+          <p class="text-[11px] text-white/50 mt-1">© All Rights Reserved.</p>
         </div>
         <div class="text-[10px] text-white/50 max-w-lg text-center md:text-right leading-relaxed">
           Unauthorized reproduction, distribution, transmission, display, publication, or modification of the content on this website is strictly prohibited.
